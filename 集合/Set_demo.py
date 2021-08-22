@@ -4,7 +4,7 @@
 a = 'abcdef'
 A = set(a)
 b = 'ackgldf'
-B =set(b)
+B = set(b)
 
 print(A&B)#交集 AB都有的部分
 print(A|B)#并集 AB合并后且无重复的部分

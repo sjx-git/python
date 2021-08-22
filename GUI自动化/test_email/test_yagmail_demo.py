@@ -24,8 +24,8 @@ class Yagmail():
         #email_info = '1064200847@qq.com'
         yag_info.send(to=email_info, subject='GUI测试'+time.strftime('%Y_%m_%d_%H_%M_%S'), contents=contents,
                       #attachments=[r"../test_file/工作簿1.xlsx"]
-                        #attachments=[r"../test_file/孙尚香.html"]
-                      attachments=attachments,prettify_html=False
+                        #attachments=[r"../test_file/孙尚香.html"]# html格式附件的在客户端邮件中不显示，但是在网页中是可以显示附件的
+                      attachments=attachments,prettify_html=True
                       )
         yag_info.close()
 

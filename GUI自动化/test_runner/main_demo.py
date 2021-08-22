@@ -27,7 +27,7 @@ os.path.join()函数
 # os.path.abspath(__file__)返回的当前.py文件的绝对路径
     print(os.path.dirname(os.path.abspath(__file__)))
 """
-import os,sys
+import os
 import time
 import HTMLTestRunner
 from GUI自动化.test_suites import test_suites_demo
@@ -35,11 +35,11 @@ from GUI自动化.test_email.test_yagmail_demo import Yagmail
 
 
 class Main_demo():
-
+    """ 通过调用测试套件，进行测试用例脚本的执行，然后再通过调用发送邮件方法，发送测试报告到邮箱中"""
     def main1(self):
         '''此处，必须用wb二进制写入，不然会报错： TypeError: write() argument must be str, not bytes'''
         report_name = os.path.join(os.path.split(os.path.abspath(os.path.dirname(__file__)))[0],"test_reports",time.strftime('%Y_%m_%d_%H_%M_%S')+'resport.html')
-        print(report_name)
+        #print(report_name)
         file_name = open(report_name,'wb')
         # verbosity=*：指数粗错误情况下的信息--默认是1；设为0，则不输出每一个用例的执行结果；2-输出详细的执行结果
         runner = HTMLTestRunner.HTMLTestRunner(stream=file_name,title='GUi自动化测试',description='简单的demo',verbosity=0)

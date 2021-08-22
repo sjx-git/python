@@ -2,7 +2,7 @@ import unittest,os
 
 
 class TestSuites():
-    """完成启动程序"""
+    """完成测试用例套件的组装"""
     def test_sutes(self):
         # 拼接处测试用例的绝对路径所在
         # print(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../test_case"))
