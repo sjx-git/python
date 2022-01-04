@@ -71,13 +71,14 @@ print('判断是不是数字：%s'%str4.isdigit())
 print('判断是不是字母和数字都有：%s'%str2.isalnum())
 
 print('合并：%s'%str.join(str1))
+print('合并，%s'%str+'111')
 
 '去除全部的空格 第一种方法'
 A=['我', '的', '收', '藏']
 #G =' '.join(A)#此处用空格去join 有点多此一举，直接用''就可以join 以免还要用replace去替换一遍
 #print(G.replace(' ',''))
 G =''.join(A)
-print(G)
+print(list(G))
 
 'join()方法+split()方法，去除全部空格 第二种方法 '
 a = " a \n b \t c "
