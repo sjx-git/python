@@ -3,6 +3,7 @@
 对有参数，有返回值的函数，进行装饰即，做一个 通用装饰器
 1.要注意在装饰器中，传入对应的形参，可以用不定长参数代替
 2.在原来的函数中，该怎么调用还是怎么调用
+3.装饰器执行顺序：先装饰，而不是等到执行的时候才进行装饰
 '''
 
 '''通用装饰器'''
@@ -14,7 +15,7 @@ def A(func):
         print('A装饰器')
         return func(*args,**kwargs)#有返回值的时候，记得最后要讲返回的数据给 return
     return A
-@A
+@A# 等价于 B=A(B)
 def B(a,b,c):
     '函数B的说明'
     return ('B的函数a=%d,b=%d,c=%d'%(a,b,c))
@@ -28,10 +29,10 @@ def AAA(temp):
     def A(func):
         def A_A(*args,**kwargs):
             print('A装饰器---%s'%temp)
-            return  func(*args,**kwargs)#有返回值的时候，记得最后要讲返回的数据给 return
+            return func(*args,**kwargs)#有返回值的时候，记得最后要讲返回的数据给 return
         return A_A
     return A
-@AAA('你瞅啥')
+@AAA('你瞅啥')# 等价于 先自动调用AAA，然后呢将返回值 A返回来，也就变成了  @A  这样子就是我们熟悉的装饰器了
 def B(a,b,c):
     return ('B的函数a=%d,b=%d,c=%d'%(a,b,c))
 print(B(11,22,33))

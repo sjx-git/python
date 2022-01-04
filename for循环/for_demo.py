@@ -5,14 +5,15 @@
 '''
 class maopao():
     def maopao_demo(self):
-        # a = [22,11,55,6,8,9,58]
-        # #此处用range是因为，单纯的 len是个数字，不能遍历,此外 需要遍历的轮数是 len(a)-1
-        # for i in range(len(a)-1):
-        #     #每轮中，是比较了len(a) - i次
-        #     for j in range(0,len(a)-i-1):
-        #         if a[j] < a[j+1]:
-        #             a[j],a[j+1] = a[j+1],a[j]
-        # print(a)
+        '''冒泡排序'''
+        a = [22,11,55,6,8,9,58]
+        #此处用range是因为，单纯的 len是个数字，不能遍历,此外 需要遍历的轮数是 len(a)-1,是因为总长度是7，但是下标是从0开始的，随意要减1，不然会有下标越界的错误
+        for i in range(len(a)-1):
+            #每轮中，是比较了len(a) - i次
+            for j in range(0,len(a)-i-1):
+                if a[j] < a[j+1]:
+                    a[j],a[j+1] = a[j+1],a[j]
+        print(a)
 
         #面试题 组成【***%%%】 第一种办法
         # a = ['*','%','*','%','*','%','*','*','%']
@@ -22,12 +23,13 @@ class maopao():
         #面试题 组成【***%%%】 第二种办法
         a = ['*','%','*','%','*','%','*','*','%']
         #此处用range是因为，单纯的 len是个数字，不能遍历,此外 需要遍历的轮数是 len(a)-1
-        for i in range(len(a)-1):
-            #每轮中，是比较了len(a) - i次
-            for j in range(0,len(a)-i-1):
-                if a[j] < a[j+1]:
-                    a[j],a[j+1] = a[j+1],a[j]
-        print(a)
+        # for i in range(len(a)-1):
+        #     #每轮中，是比较了len(a) - i次
+        #     for j in range(0,len(a)-i-1):
+        #         if a[j] < a[j+1]:
+        #             a[j],a[j+1] = a[j+1],a[j]
+        # print(a)
+
 
 if __name__ == '__main__':
     maopao().maopao_demo()

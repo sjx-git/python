@@ -12,7 +12,7 @@ print('添加单个字符或者列表 在最后%s'%list7)
 list7.insert(0, 'haha')
 print('按下标添加：%s'%list7)
 
-'只能合并列表，不能添加单个字符，[新增的列表数据，合并数据]；与append不同的添加效果'
+'只能合并列表，不能添加单个字符，[旧数据，新增的列表数据]；与append不同的添加效果'
 list3 = list1 + list7
 print('+号相连：%s'%list3)
 
@@ -51,8 +51,9 @@ print('index（要查询的关键字,起始位置、终止位置）：%s'%list7.
 '''排序 当列表内容元素为数字的时候很好排序，但为字典的时候就需要用到lambda函数'''
 
 list7.sort()
-print('排序 从小到大：%s'%sorted(list7))
-print('排序 从小到大：%s'%list7)
+print('排序 从小到大，第一种方法：%s'%list7)
+print('排序 从小到大，第二种方法：%s'%sorted(list7))
+
 
 list7.sort(reverse=True)
 print('排序 从大到小：%s'%list7)
@@ -82,13 +83,15 @@ print('list4的值为：%s'%list4)
 list5 = set(list7)#set会将list转变为无序的数值{} 很像是字典但看了类型为set类型
 print('list5的值为：%s'%list5)
 #list6 = list(list5)
-#此处可以使用eval 原本是什么样的格式就转回什么样的格式
+#此处可以使用eval 原本是什么样的格式就转回什么样的格式，但要注意。eval是只针对字符串的
 #list6 = eval(str(list5))
 list6 = list(list5)
 print('list6的数值是%s'%list6)
 
-a = [123]
-b = [132]
+
+print('判定两个列表是否相等')
+a = [1,2,3]
+b = [1,3,2]
 if a == b:
     print('1')
 

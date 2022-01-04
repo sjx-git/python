@@ -4,3 +4,4 @@ tuple = (11,22,33)
 '不允许 增删改，只能查'
 a,b,c = tuple
 print('元组的拆包：%s，%s，%s'%(a,b,c))
+print('元祖的取值用下标，%d'%tuple[0])

@@ -1,7 +1,5 @@
-'''单例的创建'''
-
-
 class OnlyOne(object):
+    '''单例的创建'''
     __instance = None
 
     def __new__(cls, *args, **kwargs):

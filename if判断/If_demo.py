@@ -1,7 +1,8 @@
 '''  if的几种写法'''
 def e():
-    a = -1
-    b = 0 if a<0 else 2# 格式是：  if成立的情况下的操作  if的条件  else即不成立的情况下的操作
+    a = 1
+    #  -->如果满足if 那么结果就是b = 0；如果不满足if也就是满足else 那么结果就是b = 2
+    b = 0 if a<0 else 2
     print(b)
 e()
 

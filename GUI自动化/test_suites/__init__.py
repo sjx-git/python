@@ -1,6 +1,23 @@
 """
 Test Suite
 一般通过addTest()或者addTests()向suite中添加。case的执行顺序与添加到Suite中的顺序是一致的
+        suite = unittest.TestSuite()
+        #此处注意，测试用例必须要先将测试的方法放到 用test方法中，然后通过addTest：类名+（'测试用例的名称'）的方式加入到suite中
+        '''第一种添加方法
+        test2 = [Test_Suite('test_post'),Test_Suite('test_get')]
+        suite.addTests(test2)
+        return suite
+        '''
+        '''第二种添加方法
+        suite.addTest(Test_Suite('test_post'))
+        suite.addTest(Test_Suite('test_get'))
+        return suite
+        '''
+        '''
+        第三种添加方法，貌似这个牛逼 可以自动查找所有测试用例'''
+        suite.addTests(unittest.TestLoader().loadTestsFromTestCase(APi_Test_Package.Auto_TestUnitest.Auto_test))
+        return suite
+
 @unittest.skip(reason)：无条件跳过单个用例或测试类，reason是跳过的原因。
 @unittest.skipIf(condition, reason)：if条件成立则跳过单个用例或测试类，reason是跳过的原因。
 @unittest.skipUnless(condition, reason)：条件为False则跳过单个用例或测试类，reason是跳过的原因。

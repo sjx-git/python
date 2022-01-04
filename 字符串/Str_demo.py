@@ -38,8 +38,8 @@ print('从左到右 只替换一次里边的内容：%s'%str.replace('is','xxxx'
 
 
 '''  split 可以用来分割/去除空格等字段'''
-print('去除空格 \t等的字段  只保留字符，并以列表的形式展示:%s'%str.split())
-print('以填写的关键字 进行分割，并以列表的形式展示：%s'%str.split(' '))
+print('去除空格 换行 等的字段  只保留字符，并以列表的形式展示:%s'%str.split())
+print('以填写的关键字 进行分割，但关键字会去去除，并以列表的形式展示：%s'%str.split(' '))
 print('以\n 进行 行的分割，并以列表的形式展示：%s'%str3.splitlines())
 
 

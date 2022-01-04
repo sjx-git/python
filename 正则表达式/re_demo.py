@@ -37,6 +37,7 @@ class Re_demo(object):
         match方法从头开始找，找到就返回，否则为None，只匹配一次
         search从头依次搜索，只匹配一次
         findall方法：返回列表，匹配所有
+        group 将结果展示出来
         sub 替换
         split 根据匹配进行切割字符串，并返回一个列表
         在"*","?","+","{m,n}"后面加上？，使贪婪变成非贪婪。
@@ -60,10 +61,10 @@ class Re_demo(object):
         # print(re.match(r'\n\w+',s).group())
 
         # 验证手机号
-        #phone = re.match('\d\d\d\d\d\d\d\d\d\d\d','18612747509jjjjj')#第一种   虽然可以满足十一位，但是后边是字母也可以演通过
+        #phone = re.match('\d\d\d\d\d\d\d\d\d\d\d','18612747509jjjjj')#第一种   虽然可以满足十一位，但是后边是字母也可以通过
         #phone = re.match('\1[35678]','18jjjj')#括号中的不用逗号隔开就可以，效果是匹配其中任意一个就可以
         #phone = re.match('\1[35678]\d{9}','18612747509jjjj')# 同样是虽然可以满足以1开头，第二位是从中选取一位，然后后面补全9位凑够11位，但仍然不能限制最后的字母
-        # phone = re.match(r'1[3,5,6,8]\d{9}$','13612747509')#正确写法，开头 中间数 个数及结尾 实现;
+        # phone = re.match(r'^1[3,5,6,8]\d{9}$','13612747509')#正确写法，开头 中间数 个数及结尾 实现;
         #     # []中既可以是【3568】 也可以是用逗号或者| 分割开
         #     # 但是不能是两个字符，比如 3 是可以识别的，但是33就不行，还有str也是一样的道理 如果想匹配多位数，用()
         # print(phone.group())
@@ -103,7 +104,7 @@ class Re_demo(object):
         #split 切割
         # url = 'http://baidu.com/name/login?id=1,http://sougou.com/name/login?id=1'
         # sp = re.split(r':|/|,|=|\.|\?',url)
-        # # print(sp)
+        # print(sp)
         # s = 'This text is displayed if your browser does not support the Canvas HTML element.利用业务经验整理的指标体系评价公司，触发阈值的指标越多，风险值越高。'
         # l = re.sub(r'This text is displayed if your browser does not support the Canvas HTML element\.','',s)
         # print(l)

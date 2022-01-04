@@ -131,3 +131,9 @@ if __name__ == '__main__':
     '''这两种调用方法都可以 不过还是建议选择先去初始化对象再去调用方法名'''
     #key_demo().if_demos()#调用的时候 需要先初始化创建对象即f 再去调用方法
     key_demo.if_demos('self')
+
+
+
+''' sql，选出id第三大'''
+def sql():
+    'SELECT * from students ORDER BY id DESC LIMIT 2,1;'
